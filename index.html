@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Random Squares Demo</title>
+    <style>
+        #squares {
+            width: 1080px;
+            height: 1920px;
+
+        }
+        
+        .square {
+            opacity: 0;
+            transition: opacity 2s linear;
+        }
+        
+        .square.fade {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="squares"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var unitSize = 40; // width (and height) of one square
+            var unitsWide = Math.round($('#squares').width() / 54); // number of squares along x-axis
+            var unitsTall = Math.round($('#squares').height() / 54); // number of squares along y-axis'
+
+            var drawing = $('<div class="drawing" id="drawing"></div>').css({
+                overflow: 'hidden',
+            });
+
+            for (var i = 0; i < unitsWide * unitsTall; i++) {
+                var randomColor;
+                randomColor = Math.random() * 0x1000000; // 0 < randomColor < 0x1000000
+                randomColor = Math.floor(randomColor); // 0 < randomColor <= 0xFFFFFF
+                randomColor = randomColor.toString(16); // hex representation randomColor
+                randomColor = ("000000" + randomColor).slice(-6); // leading zeros added
+                randomColor = "#" + randomColor; // # added
+
+                $('<span class="square"></span>').css({
+                    display: 'block',
+                    float: 'left',
+                    width: unitSize,
+                    height: unitSize,
+                    margin: '7px 7px 7px 7px',
+                    'background-color': randomColor //'#d8e1eb'
+                }).appendTo(drawing);
+            }
+
+            drawing.appendTo($("#squares"));
+            randomFade();
+            myTimer = setInterval(randomFade, 300);
+        });
+
+        function randomFade() {
+            shuffle($(".square")).slice(0, 20).toggleClass('fade');
+        }
+
+    function shuffle(array) {
+        var m = array.length, t, i;
+                t, i;
+
+        // While there remain elements to shuffle…
+        while (m) {
+
+            // Pick a remaining element…
+            i = Math.floor(Math.random() * m--);
+
+            // And swap it with the current element.
+            t = array[m];
+            array[m] = array[i];
+            array[i] = t;
+        }
+
+            return array;
+        }
+    </script>
+</body>
+</html>
