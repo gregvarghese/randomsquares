@@ -10,4 +10,6 @@ Notes:
 * Fade is set to be toggled and uses CSS3 transitions
 * Hard coded to use 20 random squares at a time. Easily adjust the speed and the number of slices to fade/in out.
 
+## Working Demo
 
+https://rawgit.com/gregvarghese/randomsquares/master/index.html
