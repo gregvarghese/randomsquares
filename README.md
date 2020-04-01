@@ -8,7 +8,7 @@ Notes:
 * Random shuffle is done using a Fisher-Yates implementation.   
 * Color is set to be random but you can also hard code a specific color (example is commented out)
 * Fade is set to be toggled and uses CSS3 transitions
-* Hard coded to use 20 random squares at a time. Easily adjust the speed and the number of slices to fade/in out.
+* Call the random function and pass in the number of squares to fade randomly at a time. Easily adjust the speed and the number of slices to fade/in out.
 
 ## Working Demo
 
