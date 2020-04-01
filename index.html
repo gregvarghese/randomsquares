@@ -54,12 +54,12 @@
             }
 
             drawing.appendTo($("#squares"));
-            randomFade();
+            randomFade(40);
             myTimer = setInterval(randomFade, 300);
         });
 
-        function randomFade() {
-            shuffle($(".square")).slice(0, 40).toggleClass('fade');
+        function randomFade(number_of_squares) {
+            shuffle($(".square")).slice(0, number_of_squares).toggleClass('fade');
         }
 
     function shuffle(array) {
