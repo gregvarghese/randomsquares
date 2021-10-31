@@ -4,7 +4,7 @@ This sample shows how to generate squares dynamically based on the container dim
 
 Notes:
 
-* Currently uses a few jquery functions. I may revisit and convert to vanillajs at some point.
+* ~~Currently uses a few jquery functions. I may revisit and convert to vanillajs at some point.~~ 10-31-2021 - Converted to vanillajs
 * Random shuffle is done using a Fisher-Yates implementation.   
 * Color is set to be random but you can also hard code a specific color (example is commented out)
 * Fade is set to be toggled and uses CSS3 transitions
